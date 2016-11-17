@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  selenium:
+    image: selenium/standalone-chrome
+    restart: on-failure:5
+    volumes:
+      - /dev/shm:/dev/shm
+
+  behat:
+    image: bergil/docker-behat:v1.1.2
+    environment:
+      COMPOSER_UPDATE: 0 # 1 to update composer before running test. Composer.json must be mounted to behat container.
+    restart: on-failure:5
+    volumes:
+      - ./../tests/behat/behat.yml:/srv/behat.yml # Mount behat.yml file as /srv/behat.yml.
+      - ./../tests/behat/features:/srv/features # Mount features folder as /srv/features.
+      - ./../tests/behat/artifacts:/srv/artifacts # Mount artifacts folder as /srv/artifacts.
+      - ./../drupal7:/drupal  # Mount drupal root directory as /drupal (optional).
+     # - {some path}/composer.json:/srv/composer.json # Mount composer.json as /srv/composer.json for composer update (optional).

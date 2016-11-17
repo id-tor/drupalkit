@@ -1,0 +1,39 @@
+// Main styles.
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $font-family;
+  color: $text-col;
+  font-size: 16px;
+  line-height: 1.42857143;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main-container {
+  @include breakpoint($screen-tablet) {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0 auto -279px;
+  }
+}
+
+.footer,
+.stick {
+  @include breakpoint($screen-tablet) {
+    height: 279px;
+  }
+}
+
+.upper-wrapper {
+  background: $body-background url(../images/bg-header-1.jpg) no-repeat;
+  background-size: cover;
+
+  @include breakpoint($screen-tablet) {
+    height: 100%;
+  }
+}

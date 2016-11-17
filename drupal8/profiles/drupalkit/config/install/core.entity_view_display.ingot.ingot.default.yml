@@ -1,0 +1,37 @@
+uuid: ee1ff1e6-6af3-4861-a909-6b72cebed677
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.ingot.ingot.drupal_modules
+  module:
+    - drupalkit_main
+    - user
+_core:
+  default_config_hash: zmLU2yQ_WY3bBbrUTAevxAoaAJXYDslyRO6ZYjkOwMw
+id: ingot.ingot.default
+targetEntityType: ingot
+bundle: ingot
+mode: default
+content:
+  drupal_modules:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  name:
+    label: above
+    type: string
+    weight: -4
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

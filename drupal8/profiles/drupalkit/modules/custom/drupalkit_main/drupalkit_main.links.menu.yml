@@ -1,0 +1,15 @@
+# Ingot menu items definition
+ingot.admin.structure.settings:
+  title: Ingots
+  description: 'Configure Ingot entities'
+  route_name: ingot.settings
+  parent: system.admin_structure
+
+# Drupal module menu items definition.
+entity.drupal_module.collection:
+  title: 'Drupal modules'
+  route_name: entity.drupal_module.collection
+  description: 'List Drupal module (bundles)'
+  parent: system.admin_structure
+  weight: 99
+

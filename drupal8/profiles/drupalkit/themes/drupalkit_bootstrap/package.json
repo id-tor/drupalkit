@@ -1,0 +1,19 @@
+{
+  "name": "drupalkit_bootstrap",
+  "private": true,
+  "scripts": {
+    "start": "gulp"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.1",
+    "breakpoint-sass": "^2.7.0",
+    "sass-breakpoints": "^1.0.0"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.10"
+  }
+}

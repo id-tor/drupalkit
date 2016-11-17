@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies: {  }
+name: node_drupal_module
+label: 'node drupal_module validation'
+entity_type: node
+bundle: drupal_module
+field_validation_rules:
+  1284ab43-85b2-4034-a49a-992c288f7e31:
+    uuid: 1284ab43-85b2-4034-a49a-992c288f7e31
+    id: unique_field_validation_rule
+    title: 'Unique value'
+    weight: '1'
+    field_name: field_machine_name
+    column: value
+    error_message: 'This value is already used.'
+    data:
+      scope: entity

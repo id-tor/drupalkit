@@ -1,0 +1,12 @@
+name: Module
+description: 'Provides Module content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - field
+  - field_validation
+  - menu_ui
+  - node
+  - path
+  - user
+package: Drupalkit

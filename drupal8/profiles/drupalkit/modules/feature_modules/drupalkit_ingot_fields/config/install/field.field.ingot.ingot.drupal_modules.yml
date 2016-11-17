@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ingot.drupal_modules
+  module:
+    - drupalkit_main
+id: ingot.ingot.drupal_modules
+field_name: drupal_modules
+entity_type: ingot
+bundle: ingot
+label: 'Drupal Modules'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:drupal_module'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

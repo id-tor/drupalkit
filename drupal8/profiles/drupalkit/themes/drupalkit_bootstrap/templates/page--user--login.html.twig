@@ -1,0 +1,51 @@
+{% extends "page.html.twig" %}
+
+{% block navbar %}
+  {%
+  set navbar_classes = [
+  'navbar',
+  theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
+  theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
+  ]
+  %}
+  <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar-title" role="banner">
+    <div class="{{ container }}">
+      <div class="navbar-header-only">
+        {{ page.navigation }}
+      </div>
+    </div>
+  </header>
+{% endblock %}
+
+{# Main #}
+{% block main %}
+  <div role="main" class="access-section">
+    <div class="{{ container }}">
+      <div class="row">
+        <div class="form-box col-md-offset-2 col-sm-offset-0 xs-offset-0 col-xs-12 col-md-8">
+          <div class="form-box-inner">
+
+            {# Header #}
+            {% if page.header %}
+              {% block header %}
+                <div class="title text-center" role="heading">
+                  {{ page.header }}
+                </div>
+              {% endblock %}
+            {% endif %}
+
+            {# Content #}
+            <section class="form-container">
+              {# Content #}
+              {% block content %}
+                <a id="main-content"></a>
+                {{ page.content }}
+              {% endblock %}
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stick"></div>
+  </div>
+{% endblock %}

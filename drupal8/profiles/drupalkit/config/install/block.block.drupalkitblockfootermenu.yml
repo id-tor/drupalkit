@@ -1,0 +1,20 @@
+uuid: dbe69aed-b4e8-4027-8195-b9ca846c70dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - drupalkit_main
+  theme:
+    - drupalkit_bootstrap
+id: drupalkitblockfootermenu
+theme: drupalkit_bootstrap
+region: footer
+weight: -9
+provider: null
+plugin: drupalkit_block_footer_menu
+settings:
+  id: drupalkit_block_footer_menu
+  label: 'Drupalkit block footer menu'
+  provider: drupalkit_main
+  label_display: '0'
+visibility: {  }

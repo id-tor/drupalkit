@@ -1,0 +1,20 @@
+uuid: f75f2e36-26fa-4a59-9d54-1e997445f985
+langcode: en
+status: true
+dependencies:
+  module:
+    - drupalkit_main
+  theme:
+    - drupalkit_bootstrap
+id: drupalkitblockfootersubscribe
+theme: drupalkit_bootstrap
+region: footer
+weight: -9
+provider: null
+plugin: drupalkit_block_footer_subscribe
+settings:
+  id: drupalkit_block_footer_subscribe
+  label: 'Drupalkit block footer subscribe'
+  provider: drupalkit_main
+  label_display: '0'
+visibility: {  }

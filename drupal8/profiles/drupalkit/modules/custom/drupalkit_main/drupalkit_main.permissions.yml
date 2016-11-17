@@ -1,0 +1,22 @@
+add ingot entities:
+  title: 'Create new Ingot entities'
+
+administer ingot entities:
+  title: 'Administer Ingot entities'
+  description: 'Allow to access the administration form to configure Ingot entities.'
+  restrict access: true
+
+delete ingot entities:
+  title: 'Delete Ingot entities'
+
+edit ingot entities:
+  title: 'Edit Ingot entities'
+
+access ingot overview:
+  title: 'Access the Ingot overview page'
+
+view published ingot entities:
+  title: 'View published Ingot entities'
+
+view unpublished ingot entities:
+  title: 'View unpublished Ingot entities'

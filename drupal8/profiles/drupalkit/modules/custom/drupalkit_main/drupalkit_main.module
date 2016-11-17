@@ -1,0 +1,166 @@
+<?php
+
+/**
+ * @file
+ * Contains drupalkit_main module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_theme().
+ */
+function drupalkit_main_theme($existing, $type, $theme, $path) {
+  return [
+    'drupalkit_block_footer_menu' => [
+      'variables' => [
+        'items' => NULL,
+        'title' => NULL,
+        'template' => 'templates/drupalkit-block-footer-menu',
+      ],
+    ],
+    'drupalkit_block_footer_social_link' => [
+      'variables' => [
+        'items' => NULL,
+        'title' => NULL,
+        'template' => 'templates/drupalkit-block-footer-social-link',
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_user_login_form_alter().
+ */
+function drupalkit_main_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Added placeholder to login form.
+  $form['name']['#title_display'] = 'invisible';
+  $form['pass']['#title_display'] = 'invisible';
+  $form['name']['#description'] = '';
+  $form['pass']['#description'] = '';
+  $form['name']['#placeholder'] = t('Email or username');
+  $form['pass']['#placeholder'] = t('Password');
+
+  $form['link_forgot_password'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'div',
+    '#value' => Link::fromTextAndUrl(t('Forgot Password?'), Url::fromRoute('user.pass'))
+      ->toString(),
+    '#attributes' => ['class' => ['sdk-forgot-password']],
+    '#weight' => 100,
+  ];
+
+  $form['title_forgot_password'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'div',
+    '#value' => t("Don't have a Drupalkit account yet?"),
+    '#attributes' => ['class' => ['sdk-lead']],
+    '#weight' => 101,
+  ];
+
+  $form['link_new_account'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'div',
+    '#value' => Link::fromTextAndUrl(t('Create your account now'), Url::fromRoute('user.register'))
+      ->toString(),
+    '#attributes' => ['class' => ['sdk-signup-link']],
+    '#weight' => 102,
+  ];
+
+  return $form;
+}
+
+/**
+ * Implements hook_form_user_register_form_alter().
+ */
+function drupalkit_main_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['description'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'p',
+    '#value' => t('It only takes 3 minutes!'),
+    '#attributes' => ['class' => ['sdk-account-description']],
+    '#weight' => -100,
+  ];
+
+  $form['account']['name']['#access'] = FALSE;
+  $form['account']['name']['#required'] = FALSE;
+  $form['account']['mail']['#title_display'] = 'invisible';
+  $form['account']['mail']['#placeholder'] = t('Your email');
+  $form['account']['name']['#description'] = '';
+  $form['account']['mail']['#description'] = '';
+  $form['account']['pass']['#description'] = '';
+
+  $form['privacy_policy'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'div',
+    '#value' => t('By signing up, you agree to our terms of services and privacy policy.'),
+    '#attributes' => ['class' => ['sdk-lead']],
+    '#weight' => 100,
+  ];
+
+  $form['title_login'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'div',
+    '#value' => t('Already have an account? <a href=":url">Log in</a>', [':url' => Url::fromRoute('user.login')->toString()]),
+    '#attributes' => ['class' => ['sdk-account-back']],
+    '#weight' => 101,
+  ];
+
+  return $form;
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function drupalkit_main_element_info_alter(&$type) {
+  if (isset($type['password_confirm']['#process'])) {
+    $type['password_confirm']['#process'][] = '_drupalkit_main_process_password_confirm';
+  }
+
+  return $type;
+}
+
+/**
+ * Do a bit of processing for the password_confirm element.
+ */
+function _drupalkit_main_process_password_confirm($element) {
+  // Use the element's title, or create a custom title with the t() function.
+  $element['pass1']['#attributes']['placeholder'] = $element['pass1']['#title'];
+  $element['pass2']['#attributes']['placeholder'] = $element['pass2']['#title'];
+
+  // Remove these lines if you want to keep the field labels.
+  $element['pass1']['#title_display'] = 'invisible';
+  $element['pass2']['#title_display'] = 'invisible';
+
+  return $element;
+}
+
+/**
+ * Implements hook_form_user_pass_alter().
+ */
+function drupalkit_main_form_user_pass_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['mail'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'p',
+    '#value' => t("Please enter your email address below and we'll email you a link to a page where you can easily create a new password."),
+    '#attributes' => ['class' => ['sdk-reset-pass-description']],
+    '#weight' => -1,
+  ];
+
+  $form['name']['#title_display'] = 'invisible';
+  $form['name']['#placeholder'] = t('Email');
+  $form['name']['#description'] = '';
+  $form['actions']['submit']['#value'] = t('Reset password');
+
+  $form['title_account'] = [
+    '#type' => 'html_tag',
+    '#tag' => 'div',
+    '#value' => t('Take me back to the <a href=":url">login</a> page', [':url' => Url::fromRoute('user.login')->toString()]),
+    '#attributes' => ['class' => ['sdk-reset-pass-back']],
+    '#weight' => 100,
+  ];
+
+  return $form;
+}

@@ -1,0 +1,163 @@
+// Footer section.
+.footer {
+  position: relative;
+  margin-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  border: none;
+  background: $footer-background;
+  font-size: 14px;
+  z-index: 20;
+
+  @include breakpoint($screen-tablet) {
+    margin-top: 0;
+  }
+
+  .region-footer {
+    @extend .row;
+
+    .block-drupalkit-block-footer-menu {
+      @include breakpoint($screen-desktop) {
+        width: 49%;
+        float: left;
+      }
+
+      .footer-col {
+
+        .title {
+          margin-top: 0;
+          margin-bottom: 20px;
+          font-size: 18px;
+          font-weight: normal;
+          color: $footer-menu-title;
+          opacity: 0.9;
+        }
+
+        ul {
+          li {
+            margin-bottom: 10px;
+
+            a {
+              color: $footer-link-color;
+
+              .fa {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      .col-md-2 {
+        @include breakpoint($screen-desktop) {
+          width: 33%;
+        }
+      }
+    }
+
+    .block-drupalkit-block-footer-social-link {
+      @include breakpoint($screen-tablet) {
+        width: 49%;
+        float: left;
+
+        .col-md-6 {
+          width: auto;
+        }
+      }
+
+      .connect {
+        .social {
+          margin-bottom: 0;
+          padding: 10px 0px;
+          overflow: hidden;
+
+          li {
+            margin-right: 10px;
+
+            a {
+              .fa {
+                color: $footer-social-icons;
+                font-size: 22px;
+              }
+
+              &:hover {
+                .fa {
+                  color: $brand;
+                }
+              }
+            }
+          }
+        }
+
+        .list-inline {
+          padding-left: 0;
+          margin-left: -5px;
+          list-style: none;
+        }
+      }
+    }
+
+    .block-drupalkit-block-footer-subscribe {
+
+      height: 189px;
+
+      @include breakpoint($screen-desktop) {
+        width: 49%;
+        float: left;
+      }
+
+      form {
+        display: flex;
+        align-items: flex-end;
+
+        .form-item {
+          max-width: 200px;
+          margin: 0 10px 0 0;
+
+          @include breakpoint($screen-desktop) {
+            max-width: 300px;
+            margin: 0 10px 0 0;
+          }
+
+          .control-label {
+            color: $footer-label-color;
+            font-weight: 300;
+            margin-bottom: 20px;
+          }
+
+          .form-control {
+            height: 40px;
+          }
+        }
+
+        .form-actions {
+          width: 200px;
+          height: 40px;
+
+          .btn-primary {
+            background: $button-color;
+            border: 2px solid $button-color;
+            font-weight: bold;
+            height: 40px;
+            padding: 9px 10px;
+          }
+        }
+      }
+
+    }
+
+    #block-drupalkit-bootstrap-footer {
+
+      display: inline-block;
+
+      .menu li {
+        float: left;
+        margin: 0;
+        background-color: $footer-bottom-bg;
+        opacity: 0.9;
+        color: $link-col;
+      }
+
+    }
+  }
+}

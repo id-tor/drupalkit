@@ -1,0 +1,7 @@
+name: 'DrupalKit Ingot Fields'
+type: module
+core: 8.x
+dependencies:
+  - drupalkit_main
+  - field
+  - user

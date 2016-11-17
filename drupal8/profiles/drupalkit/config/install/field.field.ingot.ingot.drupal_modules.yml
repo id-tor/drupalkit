@@ -1,0 +1,26 @@
+uuid: b653c96b-6174-48bc-b3ff-bbe0995bdb59
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.ingot.drupal_modules
+  module:
+    - drupalkit_main
+_core:
+  default_config_hash: cI7ezuy2L0tn0bApPA8MmaTxISxEpbb6SeXWvReDIS8
+id: ingot.ingot.drupal_modules
+field_name: drupal_modules
+entity_type: ingot
+bundle: ingot
+label: 'Drupal Modules'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:drupal_module'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

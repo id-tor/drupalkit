@@ -1,0 +1,42 @@
+version: "2"
+
+services:
+  mariadb:
+    restart: 'no'
+
+  php:
+    environment:
+      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
+      PHP_XDEBUG_ENABLED: 1 # Set 1 to enable.
+
+  nginx:
+    ports:
+      - "80"
+    environment:
+      VIRTUAL_HOST: d8.loc
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: d8
+      PMA_PASSWORD: d8
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+      VIRTUAL_HOST: pma.d8.loc
+    ports:
+     - "8000:80"
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025"
+    environment:
+      VIRTUAL_HOST: mail.d8.loc
+      VIRTUAL_PORT: 8025
+
+networks:
+  default:
+    external:
+      name: proxy_local_network
+

@@ -1,0 +1,59 @@
+name: DrupalKit
+type: profile
+core: 8.x
+dependencies:
+  - automated_cron
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - color
+  - comment
+  - config
+  - contact
+  - contextual
+  - datetime
+  - dblog
+  - dynamic_page_cache
+  - editor
+  - field_ui
+  - file
+  - help
+  - history
+  - image
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - quickedit
+  - rdf
+  - search
+  - shortcut
+  - system
+  - taxonomy
+  - toolbar
+  - tour
+  - user
+  - views
+  - views_ui
+  - tour
+  - automated_cron
+  # Contrib modules.
+  - admin_toolbar
+  - config_update
+  - ctools
+  - entity
+  - features
+  - features_ui
+  # Project modules.
+  - drupalkit_main
+  # Feature modules.
+  - drupalkit_ingot_fields
+themes:
+  - drupalkit_bootstrap
+  - seven
+package: DrupalKit
+distribution:
+  name: DrupalKit

@@ -1,0 +1,80 @@
+<?php
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * Implements drupalkit_main_update_N().
+ */
+function drupalkit_main_update_8100() {
+  $menu_name = 'account';
+
+  $menu_handler = \Drupal::service('plugin.manager.menu.link');
+  $menu_handler->deleteLinksInMenu($menu_name);
+
+  $link_1 = MenuLinkContent::create([
+    'title' => t('Home'),
+    'link' => ['uri' => 'internal:/'],
+    'menu_name' => $menu_name,
+    'expanded' => TRUE,
+  ]);
+  $link_1->save();
+
+  $link_2 = MenuLinkContent::create([
+    'title' => t('Features'),
+    'link' => ['uri' => 'internal:/'],
+    'menu_name' => $menu_name,
+    'expanded' => TRUE,
+  ]);
+  $link_2->save();
+
+  $link_3 = MenuLinkContent::create([
+    'title' => t('Pricing'),
+    'link' => ['uri' => 'internal:/'],
+    'menu_name' => $menu_name,
+    'expanded' => TRUE,
+  ]);
+  $link_3->save();
+
+  $link_4 = MenuLinkContent::create([
+    'title' => t('Sign Up Free'),
+    'link' => ['uri' => 'internal:/user/register'],
+    'menu_name' => $menu_name,
+    'expanded' => TRUE,
+  ]);
+  $link_4->save();
+
+  $link_5 = MenuLinkContent::create([
+    'title' => t('Pages'),
+    'link' => ['uri' => 'internal:/'],
+    'menu_name' => $menu_name,
+    'expanded' => TRUE,
+  ]);
+  $link_5->save();
+
+  $sub_link_1 = MenuLinkContent::create([
+    'title' => t('About Us'),
+    'link' => ['uri' => 'internal:/'],
+    'menu_name' => $menu_name,
+    'parent' => $link_5->getPluginId(),
+    'expanded' => TRUE,
+  ]);
+  $sub_link_1->save();
+
+  $sub_link_2 = MenuLinkContent::create([
+    'title' => t('Contact Us'),
+    'link' => ['uri' => 'internal:/'],
+    'menu_name' => $menu_name,
+    'parent' => $link_5->getPluginId(),
+    'expanded' => TRUE,
+  ]);
+  $sub_link_2->save();
+
+  $sub_link_3 = MenuLinkContent::create([
+    'title' => t('Blog'),
+    'link' => ['uri' => 'internal:/'],
+    'menu_name' => $menu_name,
+    'parent' => $link_5->getPluginId(),
+    'expanded' => TRUE,
+  ]);
+  $sub_link_3->save();
+}

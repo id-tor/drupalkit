@@ -1,0 +1,28 @@
+# Ingot routing definition
+ingot.collection_tab:
+  route_name: entity.ingot.collection
+  title: 'Ingots'
+  base_route: ingot.settings
+  weight: -10
+
+ingot.settings_tab:
+  route_name: ingot.settings
+  title: 'Settings'
+  base_route: ingot.settings
+
+entity.ingot.canonical:
+  route_name: entity.ingot.canonical
+  base_route: entity.ingot.canonical
+  title: 'View'
+
+entity.ingot.edit_form:
+  route_name: entity.ingot.edit_form
+  base_route: entity.ingot.canonical
+  title: Edit
+
+entity.ingot.delete_form:
+  route_name:  entity.ingot.delete_form
+  base_route:  entity.ingot.canonical
+  title: Delete
+  weight: 10
+

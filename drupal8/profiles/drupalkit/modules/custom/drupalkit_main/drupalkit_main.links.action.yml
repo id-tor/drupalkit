@@ -1,0 +1,11 @@
+entity.ingot.add_form:
+  route_name: entity.ingot.add_form
+  title: 'Add Ingot'
+  appears_on:
+    - entity.ingot.collection
+entity.drupal_module.add_form:
+  route_name: 'entity.drupal_module.add_form'
+  title: 'Add Drupal module'
+  appears_on:
+    - entity.drupal_module.collection
+

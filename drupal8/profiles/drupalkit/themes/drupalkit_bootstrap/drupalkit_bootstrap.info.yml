@@ -1,0 +1,25 @@
+name: DrupalKit
+description: 'Bootstrap-based theme for DrupalKit project.'
+package: InternetDevels
+
+type: theme
+core: 8.x
+base theme: bootstrap
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  header: 'Top Bar'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+  - 'drupalkit_bootstrap/global-styling'
+  - 'drupalkit_bootstrap/bootstrap-scripts'
+  - 'drupalkit_bootstrap/fonts'

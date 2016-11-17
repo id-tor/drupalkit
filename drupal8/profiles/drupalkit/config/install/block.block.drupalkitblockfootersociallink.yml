@@ -1,0 +1,20 @@
+uuid: e98e6ea5-dcd5-4eff-93d3-fbb71ee30acd
+langcode: en
+status: true
+dependencies:
+  module:
+    - drupalkit_main
+  theme:
+    - drupalkit_bootstrap
+id: drupalkitblockfootersociallink
+theme: drupalkit_bootstrap
+region: footer
+weight: -9
+provider: null
+plugin: drupalkit_block_footer_social_link
+settings:
+  id: drupalkit_block_footer_social_link
+  label: 'Drupalkit block footer social link'
+  provider: drupalkit_main
+  label_display: '0'
+visibility: {  }

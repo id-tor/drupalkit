@@ -1,0 +1,29 @@
+version: "2"
+
+services:
+  php:
+    environment:
+      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
+      PHP_XDEBUG_ENABLED: 0 # Set 1 to enable.
+    volumes:
+      # __DB_DUMP_JOB__ - Will be replaced with real job name.
+      - /home/jenkins/workspace/__DB_DUMP_JOB__/:/var/db_dump/
+
+  nginx:
+    ports:
+      - "80"
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mariadb
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    ports:
+     - "80"
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025"

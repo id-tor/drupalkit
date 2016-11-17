@@ -1,0 +1,12 @@
+drupalkit_main.drupal_module.*:
+  type: config_entity
+  label: 'Drupal module config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

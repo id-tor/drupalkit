@@ -1,0 +1,23 @@
+<div class="footer-col connect col-xs-12 col-md-6">
+  <div class="footer-col-inner">
+    <ul class="social list-inline" >
+      {% for item in items %}
+        {% if item.link %}
+          <li class="{{ item.link_active }}">
+            {% if not item.child %}
+              {{ link({
+                '#prefix': '<i class="'~ item.class ~'"></i>',
+                '#markup': item.title,
+                '#suffix': ''},
+              'internal:'~item.link ) }}
+            {% endif %}
+          </li>
+        {% else %}
+          <li class="heading">
+            <h3 class="uppercase">{{ item.title }}</h3>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+/* Color variables */
+$blue:                   #253340;
+$blue-dark:              #212e3a;
+$blue-light:             #2e4050;
+$cyan:                   #15b5c1;
+$grey:                   #666666;
+$grey-light:             #b3b3b3;
+$grey-dark:              #444444;
+$white:                  #ffffff;
+$orange:                 #ec6952;
+
+$brand:                  $orange;
+$brand-title:            $white;
+
+/* Scaffolding */
+
+/* Background color for `<body>` */
+$body-background:        $blue !default;
+$header-bg-desktop:      $white !default;
+$footer-background:      $blue !default;
+$footer-bottom-bg:       #222222;
+
+/* Global text color on `<body>` */
+$text-col:               $grey-dark !default;
+$form-text-color:        #999 !default;
+
+/* Global textual link color */
+$link-col:               $white !default;
+$link-color-desktop:     $grey !default;
+$footer-menu-title:      $white !default;
+$footer-link-color:      #6d8dab !default;
+$footer-social-icons:    $grey-light !default;
+$footer-label-color:     #999999 !default;
+$button-color:           #5d80a1 !default;
+
+/* Font */
+$font-family:            "Roboto", Helvetica, Arial, sans-serif;
+$font-family-bold:       "Roboto Slab", Helvetica, Arial, sans-serif;
+
+/* Dropdowns */
+
+/* Background for the dropdown menu */
+$dropdown:               $blue !default;
+
+/* Dropdown link text color */
+$dropdown-link:          $white !default;
+/* Hover color for dropdown links */
+$dropdown-link-hover:    $white !default;
+$dropdown-bottom-line:   $blue-dark !default;
+/* Hover background for dropdown links */
+$dropdown-hover-bg:      $blue-light !default;
+
+$screen-xs-only:         max-width ($screen-xs - 1);

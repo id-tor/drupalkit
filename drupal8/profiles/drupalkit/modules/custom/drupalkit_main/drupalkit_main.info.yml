@@ -1,0 +1,9 @@
+name: DrupalKit
+description: 'Main module for DrupalKit project.'
+package: InternetDevels
+
+type: module
+core: 8.x
+
+dependencies:
+  - ultimate_cron

@@ -1,0 +1,202 @@
+.access-section {
+  padding-top: 10px;
+
+  @include breakpoint($screen-desktop) {
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .form-box {
+    .form-box-inner {
+      background: #fff;
+      border-radius: 4px;
+      background-clip: padding-box;
+      padding: 40px;
+
+      .title {
+        font-weight: 300;
+        margin-top: 0;
+        font-size: 30px;
+
+        .nav {
+          display: none;
+        }
+
+        .page-header {
+          border: none;
+          font-size: 30px;
+          font-weight: 300;
+          padding: 0;
+          margin-bottom: 15px;
+        }
+      }
+
+      section {
+        .region-content {
+          form {
+            div {
+              margin: 0;
+
+              &:before {
+                font-family: FontAwesome;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                position: relative;
+                left: 10px;
+                top: 32px;
+                color: $form-text-color;
+              }
+
+              .form-control {
+                padding: 6px 30px;
+                font-size: 13px;
+                box-shadow: none;
+                height: 40px;
+                border-color: #eee;
+              }
+
+              button {
+                width: 100%;
+                background: $brand;
+                border: 2px solid $brand;
+                color: #fff;
+                font-weight: bold;
+                transition: all 0.4s ease-in-out;
+              }
+            }
+
+            .form-item-mail,
+            .form-item-name {
+              &:before {
+                content: "\f007";
+              }
+            }
+
+            .form-item-pass,
+            .form-item-pass-pass2 {
+              &:before {
+                content: "\f023";
+              }
+            }
+
+            .form-item-persistent-login {
+              margin: 10px 0;
+
+              label {
+                font-size: 14px;
+                color: #666;
+              }
+            }
+
+            .sdk-forgot-password {
+              margin-top: 5px;
+
+              a {
+                color: $form-text-color;
+                font-size: 13px;
+              }
+            }
+
+            .sdk-lead {
+              font-size: 14px;
+              color: $form-text-color;
+              margin-top: 25px;
+            }
+
+            .sdk-signup-link {
+              a {
+                font-size: 14px;
+                color: $brand;
+              }
+            }
+
+            .sdk-account-description,
+            .sdk-reset-pass-description {
+              max-width: 700px;
+              margin: 0 auto;
+              margin-bottom: 44px;
+              text-align: center;
+              color: $form-text-color;
+              font-size: 18px;
+            }
+
+            .sdk-reset-pass-description {
+              margin-top: 30px;
+              font-size: 16px;
+              margin-bottom: 14px;
+            }
+
+            .sdk-account-back,
+            .sdk-reset-pass-back {
+              font-size: 14px;
+              color: $form-text-color;
+              margin-top: 30px;
+
+              a {
+                font-size: 14px;
+                color: $brand;
+              }
+            }
+
+            .sdk-reset-pass-back {
+              text-align: center;
+            }
+
+            #edit-user-picture-wrapper,
+            #edit-contact,
+            #edit-timezone {
+              display: none;
+            }
+          }
+
+          .user-register-form,
+          .user-pass {
+            div {
+              button {
+                margin-top: 15px;
+              }
+            }
+          }
+
+          .user-register-form {
+            .form-item-pass-pass1,
+            .form-item-pass-pass2 {
+              label {
+                display: none;
+              }
+
+              .js-password-confirm {
+                margin-bottom: 5px;
+              }
+
+              .password-confirm {
+                color: $form-text-color;
+                font-size: 13px;
+
+                .ok {
+                  color: #008000;
+                }
+
+                .error {
+                  color: #FF0000;
+                }
+              }
+            }
+          }
+
+          .user-login-form {
+            margin-top: 44px;
+          }
+
+          .user-pass {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+}
