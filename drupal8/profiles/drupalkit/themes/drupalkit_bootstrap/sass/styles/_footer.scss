@@ -99,8 +99,6 @@
 
     .block-drupalkit-block-footer-subscribe {
 
-      height: 189px;
-
       @include breakpoint($screen-desktop) {
         width: 49%;
         float: left;

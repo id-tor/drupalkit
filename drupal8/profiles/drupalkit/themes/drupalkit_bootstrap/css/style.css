@@ -8464,10 +8464,6 @@ p:last-child,
   list-style: none;
 }
 
-.footer .region-footer .block-drupalkit-block-footer-subscribe {
-  height: 189px;
-}
-
 @media (min-width: 992px) {
   .footer .region-footer .block-drupalkit-block-footer-subscribe {
     width: 49%;
